@@ -120,19 +120,19 @@ class CelestialSphere {
         
         var mDefAps = -24.5;
         var mDefIni = -24.5;
-        var mDefRad = 216;
+        var mDefRad = 180;
         var mDefEcc = mDefRad * 1 / 5;
-        var mDefVel = 4054238 / 8657311;
+        var mDefVel = 14806627 / 25900833;
         var mEpiIni = -24.5;
-        var mEpiRad = mDefRad * 39.5 / 60;
-        var mEpiVel = 1;
+        var mEpiRad = mDefRad * 29.5 / 60;
+        var mEpiVel = 4054238 / 8657311;
         
         this.mDef = new CyclingBody("", "#F50", "#F50", this.earth, mDefEcc, mDefAps, mDefRad, mDefIni, mDefVel);
         this.mEpi = new CyclingBody("M", "#F50", "#F50", this.mDef, 0, 0, mEpiRad, mEpiIni, mEpiVel);
         
         var sEccAps = -24.5;
         var sEccIni = -24;5
-        var sEccRad = 70;
+        var sEccRad = 120;
         var sEccEcc = sEccRad / 24;
         var sEccVel = 1;
         
@@ -140,7 +140,7 @@ class CelestialSphere {
         
         var vDefAps = -45;
         var vDefIni = -24.5;
-        var vDefRad = 39;
+        var vDefRad = 60;
         var vDefEcc = vDefRad * 1.25 / 60;
         var vDefVel = 1;
         var vEpiIni = -24.5;
@@ -169,11 +169,11 @@ function exist() {
     fillBox(0, 0, 720, 720, "#000");
     
     drawLine(360, 0, 360, 720, "#FFF");
-    drawLabel(360 + 6, 0 + 9, 36, "SS");
-    drawLabel(360 + 6, 720, 36, "WS");
+    drawLabel(360 + 6, 0 + 9, 96, "Summer Solstice");
+    drawLabel(360 + 6, 720, 96, "Winter Solstice");
     drawLine(0, 360, 720, 360, "#FFF");
-    drawLabel(0, 360 - 6, 36, "AE");
-    drawLabel(720 - 18, 360 - 6, 36, "SE");
+    drawLabel(0, 360 - 6, 96, "Autumn Equinox");
+    drawLabel(720 - 96, 360 - 6, 96, "Spring Equinox");
     
     world.tick();
     
