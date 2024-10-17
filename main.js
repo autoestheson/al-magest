@@ -118,13 +118,13 @@ class CelestialSphere {
     constructor() {
         this.earth = new Body("E", "#0F0", 360, 360);
         
-        var mDefApo = 50/3;
-        var mDefEpo = -1297/15;
+        var mDefApo = 50/3; // rotated from 25.5
+        var mDefEpo = -1297/15; // calc 10.20
         var mDefRad = 180; // arbitrary
         var mDefEcc = mDefRad * 1 / 5; // prop 10.8-10.15
         var mDefVel = 14806627 / 25900833; // calc 9.3
-        var mEpiEpo = mDefApo + 19633 / 60;
-        var mEpiRad = mDefRad * 39.5 / 60;
+        var mEpiEpo = mDefApo + 19633 / 60; // calc 10.20
+        var mEpiRad = mDefRad * 39.5 / 60; // prop 10.20
         var mEpiVel = 4054238 / 8657311; // calc 9.3
         
         this.mDef = new CyclingBody("", "#F50", "#F50", this.earth, mDefEcc, mDefApo, mDefRad, mDefEpo, mDefVel);
@@ -138,7 +138,7 @@ class CelestialSphere {
         
         this.sEcc = new CyclingBody("S", "#FF0", "#FF0", this.earth, sEccEcc, sEccApo, sEccRad, sEccEpo, sEccVel);
         
-        var vDefApo = -263/6 // -45; // calc 1-4
+        var vDefApo = -217/6 // rotated from -45
         var vDefEpo = sEccEpo; // inner planet - same as Sun
         var vDefRad = 60; // arbitrary
         var vDefEcc = vDefRad * 1.25 / 60; // prop 10.2

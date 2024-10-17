@@ -3,27 +3,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>ALMAGEST</title>
+    <title>Ptolemy's Almagest</title>
     <link href="stylesheet.css" rel="stylesheet" />
     <link href="icon.png" rel="icon" />
 </head>
 <body>
-    <h1>ALMAGEST</h1>
+    <h1>Ptolemy's Almagest</h1>
     <canvas width="512" height="512"></canvas>
     <script src="main.js"></script>
-    <h2>Notes</h2>
+    <h2>About this Model</h2>
+    <p>This is a model of the paths of the Sun and two planets Venus and Mars, beginning at noon, Thoth 1, Nabonassar I, equivalent to February 26, 747 BCE.</p>
+    <p>I set out creating it with the goal in mind of accurately simulating the significant ratios and timing in Ptolemy's system. With Venus, an inner planet, the Sun, and Mars, an outer planet, the model should be able to capture the essential differences in types of motion outlined by Ptolemy. Except for the Moon, of course.</p>
+    <p>The main challenge that I had before me was to translate Ptolemy's mathematical terminology into that of my computer's. Although this in appearance represents a similar idea to Ptolemy's, it is lacking in several ways that I have not yet been able to represent. For example, the radii of every eccentric circle was arbitrarily chosen, but as I understand it, Ptolemy expected them to be scaled such that no epicycle should collide nor should there be unnecessary space. I believe the model is still accurate, at least to an observer at E, whether it's scaled in that exact way, but the size of Mars' epicycle would be so much larger than that of Venus' that I don't know how to reasonably portray them both on the same limited canvas. The simulation also runs with the length of a year defined at an arbitrary speed. Ideally, it should take about 365 days for the Sun to complete its motion, with the planets' speeds scaled accordingly. I hope to be able to get this to a point where it can simulate at several scales of time - so you can see a real day in Nabonassar I, for example. The final, and possibly biggest, thing I have disregarded so far is the motion of the celestial sphere. It should complete a full rotation in 24 hours, here about 1/365th the time of a rotation of the Sun. Currently it would be unreasonable to show simply because of the rapidity of the model. However, if I were to simulate closer to real-time, then it may be possible to meaningfully represent the daily motion of the celestial sphere.</p>
+    
     <p>This model begins on the first year of Nabonassar, by Egyptian reckoning Thoth 1, mid-day. All things are in ratio that matter, but not all things are in ratio that could be.</p>
     
-    <h2>Heavenly Bodies</h2>
+    <h2>Sources for Heavenly Bodies</h2>
     <h3>Mars</h3>
     <h4>Velocity</h4>
     <p>Calculation 9.3 finds that 37 anomalies of the star Mars fit in 79 solar years and 3;13 days (~79.0088 or 8657311/109574 years) in 42 revolutions of the star and 3;10 degrees (~45.16 or 271/6 revolutions). So the star on the epicycle completes 46.83% of a rotation in a year or makes 4054238 rotations in 8657311 years, while the epicycle on the deferent completes 57.17% of a rotation in a year or makes 14847277 rotations in 25971933 years.</p>
     <h4>Irregularity</h4>
+    <p>Proposition 10.16, with much fanfare, determines apogee to be 25;30 degrees of Cancer and perigee to be 25;30 degrees of Capricorn. Relative to the summer tropic, that puts apogee at 25.5 degrees <i>eastwards</i>.</p>
     <p>Propositions 10.8-10.15 iteratively approach the eccentricity of the deferent, by the 3rd calculation, finding it to be 12 parts where the radius of the deferent is 60. So the eccentricity is 1/5th the deferent's radius.</p>
     <p>Proposition 10.20 determines the radius of the epicycle 39;30 (39.5) of the same parts. Thus the epicycle's radius is 39.5/60ths of the same above radius.</p>
     <h4>Epoch</h4>
-    <p>Calculation 10.20 determines as follows: "for the first year of Nabonassar, by Egyptian reckoning Thoth 1, mid-day, as epoch ...: 3;32 degrees of Aries in longitude and 327;13 degrees from apogee of the epicycle in anomaly."</p>
-    <p>But due to the motion of apogees, Mars' apogee has moved from 21;25 degrees of Cancer to 16;40 degrees of Cancer by this epoch.</p>
+    <p>Calculation 10.20 determines for an epoch of the first year of Nabonassar - by Egyptian reckoning Thoth 1, mid-day: "3;32 (~3.53 or 53/15) degrees of Aries in longitude and 327;13 (~327.216 or 19633/60) degrees from apogee of the epicycle in anomaly."</p>
+    <p>In addition, by this epoch, he determines that due to the regular motion of apogees calculated at 1 degree / 100 years, the apogee of Mars had moved first from 21;25 (~21.416 or 257/12) degrees down to 16;40 (~16.6 or 50/3) degrees of Cancer.</p>
     
     <h3>The Sun</h3>
     <h4>Velocity</h4>
@@ -32,7 +37,7 @@
     <p>Calculation 3.20 determines the eccentricity to be 1/24th its radius.</p>
     <p>Calculation 3.21 determines the apogee to be 24;30 (24.5) degrees westwards of the summer tropic. That's also 5.5 degrees of the constellation Gemini.</p>
     <h4>Epoch</h4>
-    <p>Observation 3.31 determines as follows: "in the first year of Nabonassar, by Egyptian reckoning Thoth 1, mid-day, the sun was separated from apogee eastwards in its uniform motion by 265;15 (265.25) degrees, and occupied in its mean motion 0;45 (0.75) degrees of Pisces."</p>
+    <p>Observation 3.31 determines for epoch: "in the first year of Nabonassar, by Egyptian reckoning Thoth 1, mid-day, the sun was separated from apogee eastwards in its uniform motion by 265;15 (265.25) degrees, and occupied in its mean motion 0;45 (0.75) degrees of Pisces."</p>
     
     <h3>Venus</h3>
     <h4>Velocity</h4>
@@ -42,7 +47,7 @@
     <p>Proposition 10.2 determines the eccentricity of the deferent to be 1;15 (1.25) parts where the radius of the deferent is 60. So the eccentricity is 1.25/60ths of the deferent's radius.</p>
     <p>Proposition 10.2 further determines the radius of the epicycle to be 43;10 (43.16 or 259/6) of the same parts. Thus the epicycle's radius is 259/360ths of the same above radius.</p>
     <h4>Epoch</h4>
-    <p>Calculation 10.13 determines as follows: "as epoch for the 1st year of Nabonassar, by Egyptian reckoning Thoth 1, mid-day: 71;7 (71.116 or 4267/60) degrees of anomaly from apogee of the epicycle; the mean passage of its longitude is assumed equal, again, to that of the sun, that is to say, occupying 0;45 degrees of Pisces."</p>
-    <p>But due to the motion of apogees, Venus' apogee has moved to 16;10 degrees of Taurus by this epoch.</p>
+    <p>Calculation 10.13 determines for epoch: "for the 1st year of Nabonassar, by Egyptian reckoning Thoth 1, mid-day: 71;7 (71.116 or 4267/60) degrees of anomaly from apogee of the epicycle; the mean passage of its longitude is assumed equal, again, to that of the sun, that is to say, occupying 0;45 degrees of Pisces."</p>
+    <p>In addition, again due to the motion of apogees, the apogee of Venus had moved first from 20;55 (~20.916 or 251/12) degrees to 16;10 (~16.16 or 97/6) degrees of Taurus by this epoch. Relative to the summer tropic that is ~36.16 (217/6) degrees westwards.</p>
 </body>
 </html>
