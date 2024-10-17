@@ -118,37 +118,37 @@ class CelestialSphere {
     constructor() {
         this.earth = new Body("E", "#0F0", 360, 360);
         
-        var mDefAps = -24.5;
-        var mDefIni = -24.5;
-        var mDefRad = 180;
+        var mDefApo = -24.5;
+        var mDefEpo = -24.5;
+        var mDefRad = 180; // arbitrary
         var mDefEcc = mDefRad * 1 / 5;
         var mDefVel = 14806627 / 25900833;
-        var mEpiIni = -24.5;
+        var mEpiEpo = -24.5;
         var mEpiRad = mDefRad * 29.5 / 60;
         var mEpiVel = 4054238 / 8657311;
         
-        this.mDef = new CyclingBody("", "#F50", "#F50", this.earth, mDefEcc, mDefAps, mDefRad, mDefIni, mDefVel);
-        this.mEpi = new CyclingBody("M", "#F50", "#F50", this.mDef, 0, 0, mEpiRad, mEpiIni, mEpiVel);
+        this.mDef = new CyclingBody("", "#F50", "#F50", this.earth, mDefEcc, mDefApo, mDefRad, mDefEpo, mDefVel);
+        this.mEpi = new CyclingBody("M", "#F50", "#F50", this.mDef, 0, 0, mEpiRad, mEpiEpo, mEpiVel);
         
-        var sEccAps = -24.5;
-        var sEccIni = -24;5
-        var sEccRad = 120;
-        var sEccEcc = sEccRad / 24;
-        var sEccVel = 1;
+        var sEccApo = -24.5; // calc 3.21
+        var sEccEpo = sEccApo + 265.25; // obs 3.31
+        var sEccRad = 120; // arbitrary
+        var sEccEcc = sEccRad / 24; // calc 3.20
+        var sEccVel = 1; // unit
         
-        this.sEcc = new CyclingBody("S", "#FF0", "#FF0", this.earth, sEccEcc, sEccAps, sEccRad, sEccIni, sEccVel);
+        this.sEcc = new CyclingBody("S", "#FF0", "#FF0", this.earth, sEccEcc, sEccApo, sEccRad, sEccEpo, sEccVel);
         
-        var vDefAps = -45;
-        var vDefIni = -24.5;
-        var vDefRad = 60;
-        var vDefEcc = vDefRad * 1.25 / 60;
-        var vDefVel = 1;
-        var vEpiIni = -24.5;
-        var vEpiRad = vDefRad * 259 / 360;
-        var vEpiVel = 273935 / 437951;
+        var vDefApo = -45; // calc 1-4
+        var vDefEpo = sEccEpo; // inner planet - same as Sun
+        var vDefRad = 60; // arbitrary
+        var vDefEcc = vDefRad * 1.25 / 60; // prop 10.2
+        var vDefVel = sEccVel; // inner planet - same as Sun
+        var vEpiEpo = 4267 / 60; // calc 10.13
+        var vEpiRad = vDefRad * 259 / 360; // prop 10.2
+        var vEpiVel = 273935 / 437951; // calc 9.4
         
-        this.vDef = new CyclingBody("", "#0FF", "#0FF", this.earth, vDefEcc, vDefAps, vDefRad, vDefIni, vDefVel);
-        this.vEpi = new CyclingBody("V", "#0FF", "#0FF", this.vDef, 0, 0, vEpiRad, vEpiIni, vDefVel + vEpiVel);
+        this.vDef = new CyclingBody("", "#0FF", "#0FF", this.earth, vDefEcc, vDefApo, vDefRad, vDefEpo, vDefVel);
+        this.vEpi = new CyclingBody("V", "#0FF", "#0FF", this.vDef, 0, 0, vEpiRad, vEpiEpo, vDefVel + vEpiVel);
     }
     
     tick() {
