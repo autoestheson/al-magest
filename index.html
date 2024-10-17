@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ALMAGEST</title>
+    <link href="stylesheet.css" rel="stylesheet" />
+    <link href="icon.png" rel="icon" />
+</head>
+<body>
+    <h1>ALMAGEST</h1>
+    <canvas width="512" height="512"></canvas>
+    <div style="display:none;"><img id="zodiac" src="zodiac.png" width="720" height="720" /></div>
+    <script src="main.js"></script>
+    <h2>Notes</h2>
+    <h3>Primum Movens</h3>
+    <p>The entire celestial sphere moves westward over the course of a 24 hour day, carrying all other inner spheres with it and adding to their motions. It is currently unimplemented. Maybe I can spin the whole canvas?</p>
+    <h3>Mars</h3>
+    <p>Calc. 9.4: "37 anomalies of the star Mars fit exactly in 79 of our solar years and 3;13 days, most nearly, and in 42 revolutions of the star and 3;10 degrees." That's 37 anomalies per ~79.0088 years, 46.83% of an anomaly per year, or precisely 4054238 anomalies / 8657311 years</p>
+    <p>Prop 10.15: "the straight line DI between the centers is 12 parts, most nearly, of which radius IJ of the eccentric circle is 60." The center of the deferent is a distance from the Earth 1/5, or 20%, of its radius.</p>
+    <p>Prop 10.20: "the ratio of the radius of the eccentric circle to the radius of the epicycle is 60 to 39;30." The radius of the epicycle is 39.5/60ths, or about 65.83%, of the radius of the deferent.</p>
+    <h3>The Sun</h3>
+    <p>The Sun moves eastward over the course of 365;14,48 days on an eccentric circle.</p>
+    <p>Calc. 3.20: "the radius of the eccentric circle is 24 times ... the line between its center and the center of the zodiac circle" can be understood as the eccentricity's relative radial coordinate; "arc BG, by which the point at apogee G is westwards of the summer tropic point B, is 24;30 degrees" can be understood as the eccentricity's angular coordinate. Thus its center is a distance from the Earth 1/24th its radius and 24.5 degrees west of the point of the summer tropic.</p>
+    <h3>Venus</h3>
+    <p>Calc. 9.4: "5 anomalies of the star Venus fit exactly in 8 of our solar years, less 2;18 days." That's 5 anomalies per ~7.9937 years, 62.55% of an anomaly per year, or precisely 273935 anomalies / 437951 years.</p>
+    <p>Calc. 10.1-2: "since according to the earlier observation its mean passage occupied 14;15 degrees of Pisces, and according to the second 5;45 degrees of Leo, and the point midway between them on the mid-zodiac circle falls out about 25 degrees of Taurus and Scorpio, the diameter of its apogee and perigee would be along these points." Thus the angle of the deferent's eccentricity is 45 degrees in the same direction as that of the Sun..</p>
+    <p>Calc. 10.3-4: "And the points of the mid-zodiac circle midway between 17;52 degrees of Libra and 2;4 degrees of Capricorn are about 25 degrees, most nearly, again of Scorpio and Taurus." Again, 45 degrees.</p>
+    <p>Prop. 10.2: "straight line DE between the centers also will be 1;15, most nearly." The center of the deferent is a distance from the Earth very close to 1/48th, or 2.08%, of its radius.</p>
+    <p>Prop. 10.2: "radius AF of the epicycle 43;10 parts where radius AD of the eccentric circle is 60." The radius of the epicycle is 259/360ths, or about 71.94%, of the radius of the deferent.</p>
+
+</body>
+</html>

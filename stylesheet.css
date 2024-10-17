@@ -1,0 +1,12 @@
+canvas {
+    border: 1px inset #000;
+}
+
+table {
+    border: 1px outset #000;
+}
+
+th, td {
+    font-family: monospace, monospace;
+    border: 1px inset #000;
+}

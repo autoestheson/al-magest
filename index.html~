@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>اَلْمَجِسْطِيّ</title>
+    <link href="stylesheet.css" rel="stylesheet" />
+    <link href="icon.png" rel="icon" />
+</head>
+<body>
+    <h1>اَلْمَجِسْطِيّ</h1>
+    <canvas width="512" height="512"></canvas>
+    <script src="main.js"></script>
+</body>
+</html>
